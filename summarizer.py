@@ -79,6 +79,23 @@ report_content = "Ai Class Lesson Plan..."
 final_prompt = create_summary_prompt(report_content)
 print(final_prompt)
 
+# Request body
+    data = {
+        "model": "gpt-4.1-mini",
+        "messages": [
+            {"role": "system", "content": "You summarize reports clearly."},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.5
+    }
+
+    # Send POST request to API
+    response = requests.post(API_URL, headers=headers, json=data)
+
+    # Convert JSON response into Python dictionary
+    result = response.json()
+
+
 
 
 
