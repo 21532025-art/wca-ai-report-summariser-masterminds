@@ -43,3 +43,4 @@ def create_summary_prompt(report_text, target_audience="Students", students="stu
 report_content = "Ai Class Lesson Plan..."
 final_prompt = create_summary_prompt(report_content)
 print(final_prompt)
+
