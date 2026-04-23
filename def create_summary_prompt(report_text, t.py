@@ -43,4 +43,15 @@ def create_summary_prompt(report_text, target_audience="Students", students="stu
 report_content = "Ai Class Lesson Plan..."
 final_prompt = create_summary_prompt(report_content)
 print(final_prompt)
-
+#add user interface 
+def main():
+    print("=== AI Report Summariser ===")
+    
+    # ONLY text input
+    text = input("Paste your report:\n")
+    
+    if not text.strip():
+        print("No input provided.")
+        return
+    
+    print("\nGenerating summary...\n")
