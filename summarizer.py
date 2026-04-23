@@ -95,7 +95,18 @@ print(final_prompt)
     # Convert JSON response into Python dictionary
     result = response.json()
 
-
+   #add user interface
+def main():
+    print("=== AI Report Summariser ===")
+    
+    # ONLY text input
+    text = input("Paste your report:\n")
+    
+    if not text.strip():
+        print("No input provided.")
+        return
+    
+    print("\nGenerating summary...\n")
 
 
 
