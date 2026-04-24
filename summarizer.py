@@ -95,7 +95,7 @@ print(final_prompt)
     # Convert JSON response into Python dictionary
     result = response.json()
 
-   #add user interface
+   # add user interface
 def main():
     print("=== AI Report Summariser ===")
     
