@@ -1,0 +1,9 @@
+# user interface
+def main():
+    print("===AI Report Summariser===")
+    #Only text input
+    text = input("paste your report:\n")
+    if not text.strip():
+        print("No input provided.")
+        return
+    print("\ngenerating summary...\n")
