@@ -10,5 +10,5 @@
 
 - Our model accepts a report and summarises it neatly with headings,bullet points and highlights the key points
 
-- A user pastes a report under "paste your report" the model runs it through the RTCCO and stores it as prompt,it is transfered to CLAUDE AI using our API key,it is then extracted and the content stored as summary and printed it to the user
+- A user pastes a report under "paste your report" the model runs it through the RTCCO and stores it as prompt,our API transfers it to claude,it is then extracted and the content stored as summary and printed it to the user
 
