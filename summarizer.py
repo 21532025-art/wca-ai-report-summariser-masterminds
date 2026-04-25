@@ -55,7 +55,7 @@ def summarize_text(text):
             "4. Key takeaways and actionable recommendations."
         )
         
-        #combine into a single prompt
+        # combine into a single prompt
         prompt = f"""
 ROLE: {role}
 TASK: {task}
