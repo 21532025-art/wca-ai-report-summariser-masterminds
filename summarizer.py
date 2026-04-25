@@ -1,16 +1,11 @@
 import os
-import json
 import anthropic
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 
 # 1. API SETUP
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
-# Initialize Anthropic client
+# Initialize Anthropic client that communicates with claude
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # To maintain conversation history
@@ -66,6 +61,7 @@ OUTPUT: {output_format}
 """
         return prompt
 
+
 # Use the structured prompt
     prompt = create_summary_prompt(text)
     messages.append({"role": "user", "content": prompt})
@@ -73,7 +69,7 @@ OUTPUT: {output_format}
     # Call Anthropic API using SDK
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=200,
+        max_tokens=1200,
         messages=messages
     )
     
@@ -82,11 +78,11 @@ OUTPUT: {output_format}
     messages.append({"role": "assistant", "content": summary})
     return summary
 
-
 # Main program
 def main():
     print("=== AI Report Summariser ===")
     
+    # Accepts text only input from the user
     text = input("Paste your report:\n")
    
     if not text.strip():
