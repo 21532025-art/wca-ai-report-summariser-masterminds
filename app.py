@@ -1,6 +1,6 @@
 import os
 import anthropic
-
+import streamlit as st
 
 
 # 1. API SETUP
@@ -81,28 +81,28 @@ OUTPUT: {output_format}
 
 # Main program
 def main():
-    print("=== AI Report Summariser ===")
+    st.title("=== AI Report Summariser ===")
     
     # Accepts text only input from the user
-    text = input("Paste your report:", height=200)
+    text = st.text_area("Paste your report:", height=200 )
    
     if not text.strip():
-        print("No input provided.")
+        st.warning("No input provided.")
         return
     
-    print("\nGenerating summary...\n")
+    st.info("\nGenerating summary...\n")
     
     try:
         summary = summarize_text(text)
-        print("=== Executive Summary ===")
-        print(summary)
+        st.success("=== Executive Summary ===")
+        st.write(summary)
             
     except ValueError as ve:
-        print(f"Configuration error: {ve}")
+        st.error(f"Configuration error: {ve}")
     except anthropic.APIError as ae:
-        print(f"API error: {ae}")
+        st.error(f"API error: {ae}")
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        st.error(f"Unexpected error: {e}")
 
 
 # Run program
